@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid blue;
+  background-color: #00b0ff;
+}
+
+.header__icon {
+  padding: 20px;
+}
+.appName {
+  text-decoration: none;
+  color: white;
+  font-family: cursive;
+  font-style: italic;
+  letter-spacing: 5px;
+}
