@@ -2,28 +2,27 @@ import React,{useEffect, useState} from 'react'
 import Switch from '@material-ui/core/Switch';
 import { RadioGroup } from '@material-ui/core'
 import './Questions.css'
+import instance from '../axios';
+
+
 
 const Questions = () => {
+    const [questions,setQuestions]=useState([]);
 
-    const [questions,setQuestions]=useState([
-       
-    ]);
-    useEffect(()=>{
-        fetch('http://127.0.0.1:5000/question',{
-            method:'GET',
-            headers:{
-                'Content-Type':'applications/json'   
-            }
+    const getQuestion = async () => {
+  try {
+      const token=localStorage.getItem('token');
+    const response = await instance.get("/question", {
+      headers: { 'x-access-token': `${token}` }
+    });
+    setQuestions(response.data.questions);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-        })
-        .then(resp=>{
-            if(resp.ok){
-                console.log(resp);
-                return resp.json()
-            }
-        })
-        .then(data=>setQuestions(data))
-    },[])
+   
+    useEffect(()=>{getQuestion()},[])
 
    
     return (
@@ -41,9 +40,9 @@ const Questions = () => {
                     //     <Switch className={tantargy.question +'2'}  checked={tantargy.checked}  color='secondary'/>
                     // </div>
                     <div key={question.id} className='question__state'>
-                        <Switch key={question.ask}  checked={question.ask}  color='primary'/>
+                        <Switch  checked={question.ask}  color='primary'/>
                         <p className='Question'>{question.text}</p>
-                        <Switch key={question.help} checked={question.help}  color='secondary'/>
+                        <Switch checked={question.help}  color='secondary'/>
                     </div>)
 })}
             </div>

@@ -4,11 +4,11 @@ import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import "./Header.css";
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import { Link,useHistory } from "react-router-dom";
+import { Link,useHistory, useNavigate } from "react-router-dom";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 function Header({backButton}) {
-    const history=useHistory();
+    const history=useNavigate();
     return (
         <div className='header'>
             {backButton ? (//ha belevan rakva a backbutton prop akkor a nyil,különben a profil ikon legyen ott

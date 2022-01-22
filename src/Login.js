@@ -1,44 +1,45 @@
 import React,{useEffect,useState} from 'react'
-import Profile from './Components/Profile'
 import './Login.css'
-import { Redirect, Router, useHistory } from "react-router-dom";
 import { withRouter } from 'react-router';
+import axios from 'axios';
+import { Link } from '@material-ui/core';
+import instance from './axios';
+import {useNavigate} from 'react-router-dom';
 
-const onLoginClick=(e)=>{
-    console.log("Login gombra kattint");
-}
+
+
+const loginAction = async (username, pass) => {
+  try {
+    const token = await instance.post("/login",{}, {
+     auth:{
+      username: username,
+      password: pass
+     }
+    });
+    return token.data.token;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 
 const Login = () => {
-    
+
+     const history=useNavigate();
 
 const[email,setEmail]=useState("");
 const [password,setPassword]=useState("");  
 
-const loginClick=()=>{
-const opts={
-    method:'OPTIONS',
-    mode:'cors',
-    headers:{
-        "Content-Type":"application/json",
-        "Access-Control-Allow-Origin":""
-    }
-    // body:JSON.stringify({
-    //     "username":email,
-    //     "password":password
-    // })
+//const token=loginAction(email,password);
+const authorize=async()=>{
+  const token = await loginAction(email,password);
+  window.localStorage.setItem('token',token);
+  history('/question',{replace:true})
+  
 }
 
-    fetch('http://127.0.0.1:5000/login',opts)
-    .then(resp=>{
-        if(resp.status===200) {
-            //window.location.href="http://127.0.0.1:5000/question"
-            return console.log('sikeres bejelentkezes');
-        }
-        else alert("Error");
-    })
-    .then()
-    .catch(error=>console.error("Error",error))
-}
+
     return (
         <div className='login__outercontainer'>
             <div className="login__container">
@@ -55,7 +56,9 @@ const opts={
                         </div>
                     </div>
                     <div className="button">
-                        <input type="button" onClick={loginClick} value='Bejelentkezés' />
+                        {/* <Link className="button" to="/question" > */}
+                        <input type="button" onClick={authorize} value='Bejelentkezés' />
+                        {/* </Link> */}
                     </div>
                 </form>
             </div>
