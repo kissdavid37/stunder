@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid rgb(152, 152, 224);
   background-color: #00b0ff;
 }
 
 .header__icon {
-  padding: 20px;
+  padding: 1vh;
 }
 .appName {
   text-decoration: none;

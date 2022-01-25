@@ -3,6 +3,7 @@ import Switch from '@material-ui/core/Switch';
 import { RadioGroup } from '@material-ui/core'
 import './Questions.css'
 import instance from '../axios';
+import SwipeButtons from './SwipeButtons'
 
 
 
@@ -34,11 +35,6 @@ const Questions = () => {
             <div className="question__container">
                 {questions.map(question=>{
                     return(
-                    // <div key={tantargy.question} className='question__state'>
-                    //     <Switch className={tantargy.question +'1'}  checked={tantargy.checked}  color='primary'/>
-                    //     <p className='Question'>{tantargy.question}</p>
-                    //     <Switch className={tantargy.question +'2'}  checked={tantargy.checked}  color='secondary'/>
-                    // </div>
                     <div key={question.id} className='question__state'>
                         <Switch  checked={question.ask}  color='primary'/>
                         <p className='Question'>{question.text}</p>
@@ -46,7 +42,9 @@ const Questions = () => {
                     </div>)
 })}
             </div>
+            <SwipeButtons/>
         </div>
+
     )
 }
 

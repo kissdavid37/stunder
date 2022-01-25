@@ -15,6 +15,12 @@ const Profile = () => {
         name:'Gazdaságinformatika'
        }
     ]);
+
+    const [profilepic,SetProfilepPic]=useState([
+        {
+            img:'http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3'
+        }
+    ]);
     
     return (
         
@@ -40,7 +46,7 @@ const Profile = () => {
                             <span className="details">Szak</span>
                             <select name="faculty" id="faculty">
                                 {faculty.map(fac =>(
-                                   <option value={fac.name}>{fac.name}</option> 
+                                   <option key={fac.name} value={fac.name}>{fac.name}</option> 
                                 ))}
                             </select>
                         </div>

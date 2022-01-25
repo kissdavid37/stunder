@@ -1,9 +1,8 @@
 import React,{useEffect,useState} from 'react'
 import './Login.css'
-import { withRouter } from 'react-router';
 import axios from 'axios';
 import { Link } from '@material-ui/core';
-import instance from './axios';
+import instance from '../axios';
 import {useNavigate} from 'react-router-dom';
 
 
@@ -39,6 +38,10 @@ const authorize=async()=>{
   
 }
 
+const register=()=>{
+  history('/register',{replace:true});
+}
+
 
     return (
         <div className='login__outercontainer'>
@@ -54,7 +57,9 @@ const authorize=async()=>{
                             <span className="details">Jelszó</span>
                             <input type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
+                        <a onClick={register}>Nincs fiókod? kattints ide.</a>
                     </div>
+                    
                     <div className="button">
                         {/* <Link className="button" to="/question" > */}
                         <input type="button" onClick={authorize} value='Bejelentkezés' />
