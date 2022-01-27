@@ -1,64 +1,86 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-@media screen {
-  .profile__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: calc(100vh);
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-}
-
-.profile__outerContainer {
-  max-width: 700px;
-  width: 100%;
-  background-color: rgb(46, 43, 43, 0.5);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 10px 15px 10px rgb(75, 74, 74);
-  display: flex;
+.login__outercontainer {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   position: fixed;
-  top: 15vh;
-}
-
-.profile__outerContainer .title {
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-
-.profile__outerContainer form .userDetails {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
+  justify-content: center;
+  align-items: center;
 }
 
-form .userDetails .inputs {
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
+.login__container {
+  width: fit-content;
+  min-height: fit-content;
+  display: flex;
 }
 
-form .userDetails .inputs input {
-  height: 45px;
-  width: 100%;
+form {
+  background-color: rgba(209, 211, 233, 0.2);
+  display: inline;
+  width: 25vw;
+  height: fit-content;
+  text-align: center;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  border-radius: 2vh;
+  box-shadow: 0 5px 40px black;
+}
+
+.userDetails {
+  display: flex;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-family: "Brush Script MT", cursieve;
+  margin-bottom: 7vh;
+  letter-spacing: 5px;
+}
+.inputs {
+  font-weight: bold;
+}
+.inputs > input {
+  border: none;
+  background: none;
+  font-weight: bold;
+  transition: 0.5s;
+  width: 5vw;
+}
+
+.inputs > input::placeholder {
+  color: rgb(46, 114, 240, 0.3);
+}
+
+input:focus {
   outline: none;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding-left: 15px;
-  font-size: 16px;
 }
 
-form .userDetails .inputs input .details {
-  font-weight: 500;
-  margin-bottom: 5px;
-  display: block;
+.button > input {
+  font-size: 15;
+  color: white;
+  border: none;
+  padding: 2vh 5vw;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #c018dd;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px black;
+  transition: 0.5s;
+  font-weight: bold;
 }
 
-.avatar {
-  margin-right: 10px;
+.button > input:hover {
+  background-color: #8337d4;
+}
+
+.button > input:active {
+  box-shadow: 0 5px black;
+  transform: translateY(5px);
 }
