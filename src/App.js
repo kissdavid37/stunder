@@ -2,22 +2,18 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Routing from './Router';
-import {useNavigate} from 'react-router-dom';
-
+import  useAuth  from './Contexts/authContext'
 function App() {
- const token =localStorage.getItem('token');
- const history=useNavigate();
- 
- if (token==null){
-   history('/',{replace:true});
- }
- if(window.location.href.endsWith('/register')){
-   return(<Routing/>)
- }
-  return (
+
+    const {authed} = useAuth()
+
+    return (
     <div className="App">
-          <Header/>
+
+            {authed && <Header />}
+        <React.Suspense fallback={<h1>Loading comp...</h1>}>
           <Routing/>
+        </React.Suspense>
 
     </div>
   );

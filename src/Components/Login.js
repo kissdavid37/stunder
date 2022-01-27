@@ -3,31 +3,36 @@ import './Login.css'
 import { Link } from '@material-ui/core';
 import instance from '../axios';
 import {useNavigate} from 'react-router-dom';
-
-
-
-const loginAction = async (username, pass) => {
-  try {
-    const token = await instance.post("/login",{}, {
-     auth:{
-      username: username,
-      password: pass
-     }
-    });
-    return token.data.token;
-  } catch (error) {
-    console.log(error);
-  }
-};
+import useAuth from '../Contexts/authContext'
 
 
 
 const Login = () => {
+    const { setLoginToken } = useAuth();
 
      const history=useNavigate();
 
 const[email,setEmail]=useState("");
-const [password,setPassword]=useState("");  
+const [password,setPassword]=useState("");
+
+
+    const loginAction = async (username, pass) => {
+        try {
+            const token = await instance.post("/login",{}, {
+                auth:{
+                    username: username,
+                    password: pass
+                }
+            });
+
+            setLoginToken(token)
+            return token.data.token;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
 
 //const token=loginAction(email,password);
 const authorize=async()=>{

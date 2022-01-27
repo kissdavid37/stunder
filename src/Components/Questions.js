@@ -4,15 +4,16 @@ import { RadioGroup } from '@material-ui/core'
 import './Questions.css'
 import instance from '../axios';
 import SwipeButtons from './SwipeButtons'
+import useAuth from "../Contexts/authContext";
 
 
 
 const Questions = () => {
     const [questions,setQuestions]=useState([]);
-
+    const { token } = useAuth();
     const getQuestion = async () => {
   try {
-      const token=localStorage.getItem('token');
+
     const response = await instance.get("/question", {
       headers: { 'x-access-token': `${token}` }
     });
