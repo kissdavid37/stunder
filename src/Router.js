@@ -1,17 +1,15 @@
 import * as React from 'react';
 import {Route,Routes} from 'react-router-dom';
-import Questions from './Components/Questions';
-import Login from './Components/Login';
 import Profile from './Components/Profile';
 import Chats from './Components/Chats';
 import Chat from './Components/Chat';
-import Register from './Components/Register';
 
 
 
-const questions=React.lazy(()=>import('./Components/Questions'));
-const login=React.lazy(()=>import('./Components/Login'));
-const register=React.lazy(()=>import('./Components/Register'));
+
+ const Questions=React.lazy(()=>import('./Components/Questions'));
+ const Login=React.lazy(()=>import('./Components/Login'));
+ const Register=React.lazy(()=>import('./Components/Register'));
 const Routing=()=>{
     return (
     <Routes>
