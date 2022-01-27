@@ -33,13 +33,26 @@ const [password,setPassword]=useState("");
 //const token=loginAction(email,password);
 const authorize=async()=>{
   const token = await loginAction(email,password);
+  if(email==""){
+    alert('Email megadása kötelező!');
+  }
+  if(password==""){
+    alert('Jelszó megadása kötelező!');
+  }
+  else if(token==null){
+    alert('Hibás felhasználónév vagy jelszó!');
+  }
+  else{
   window.localStorage.setItem('token',token);
   history('/question',{replace:true})
+  }
+  
+  
   
 }
 
-const register=()=>{
-  history('/register',{replace:true});
+const register=async()=>{
+   history('/register',{replace:true});
 }
 
 
@@ -57,7 +70,7 @@ const register=()=>{
                             <span className="details">Jelszó</span>
                             <input type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
-                        <a onClick={register}>Nincs fiókod? kattints ide.</a>
+                        <p onClick={register}>Nincs fiókod? kattints ide.</p>
                     </div>
                     
                     <div className="button">

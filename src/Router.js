@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {BrowserRouter, Route,Routes} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 import Questions from './Components/Questions';
 import Login from './Components/Login';
 import Profile from './Components/Profile';

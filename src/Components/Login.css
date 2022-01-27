@@ -55,7 +55,6 @@ h1 {
 
 .inputs > input::placeholder {
   color: rgb(46, 114, 240, 0.3);
-  
 }
 
 input:focus {
@@ -84,4 +83,8 @@ input:focus {
 .button > input:active {
   box-shadow: 0 5px black;
   transform: translateY(5px);
+}
+
+p:hover {
+  cursor: pointer;
 }
