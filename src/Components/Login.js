@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react'
 import './Login.css'
-import axios from 'axios';
 import { Link } from '@material-ui/core';
 import instance from '../axios';
 import {useNavigate} from 'react-router-dom';
@@ -51,7 +50,7 @@ const authorize=async()=>{
   
 }
 
-const register=async()=>{
+const register=()=>{
    history('/register',{replace:true});
 }
 
