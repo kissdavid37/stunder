@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import Switch from '@material-ui/core/Switch';
-import { RadioGroup } from '@material-ui/core'
+import useRightClickMenu from '../hooks/useRightClickMenu';
+import Menu from './Menu';
 import './Questions.css'
 import instance from '../axios';
 import SwipeButtons from './SwipeButtons'
@@ -9,6 +10,7 @@ import useAuth from "../Contexts/authContext";
 
 
 const Questions = () => {
+  const {x,y,showMenu}=useRightClickMenu();
     const [questions,setQuestions]=useState([]);
    // const { token } = useAuth();
    const token=localStorage.getItem('token');
