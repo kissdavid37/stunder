@@ -10,7 +10,8 @@ import useAuth from "../Contexts/authContext";
 
 const Questions = () => {
     const [questions,setQuestions]=useState([]);
-    const { token } = useAuth();
+   // const { token } = useAuth();
+   const token=localStorage.getItem('token');
     const getQuestion = async () => {
   try {
 
