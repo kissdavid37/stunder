@@ -12,7 +12,7 @@ const Login = () => {
 
      const history=useNavigate();
 
-const[email,setEmail]=useState("");
+const[username,setEmail]=useState("");
 const [password,setPassword]=useState("");
 
 
@@ -36,9 +36,9 @@ const [password,setPassword]=useState("");
 
 //const token=loginAction(email,password);
 const authorize=async()=>{
-  const token = await loginAction(email,password);
-  if(email==""){
-    alert('Email megadása kötelező!');
+  const token = await loginAction(username,password);
+  if(username==""){
+    alert('Felhasználónév megadása kötelező!');
   }
   if(password==""){
     alert('Jelszó megadása kötelező!');
@@ -68,7 +68,7 @@ const register=()=>{
                         <h1 className="log">Stunder</h1>
                         <div className="inputs">
                             <span className="details">Felhasználónév</span>
-                            <input type="text" placeholder='Felhasználónév' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                            <input type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setEmail(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">Jelszó</span>
