@@ -10,7 +10,7 @@ import useAuth from "../Contexts/authContext";
 
 
 const Questions = () => {
-  const {x,y,showMenu}=useRightClickMenu();
+  //const {x,y,showMenu}=useRightClickMenu();
     const [questions,setQuestions]=useState([]);
    // const { token } = useAuth();
    const token=localStorage.getItem('token');
@@ -40,6 +40,7 @@ const Questions = () => {
                 {questions.map(question=>{
                     return(
                     <div key={question.id} className='question__state'>
+                      {/* <Menu x={x} y={y} showMenu={showMenu} /> */}
                         <Switch  checked={question.ask}  color='primary'/>
                         <p className='Question'>{question.text}</p>
                         <Switch checked={question.help}  color='secondary'/>

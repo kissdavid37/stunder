@@ -16,6 +16,7 @@ function RequireAuth({ children }) {
  const Questions=React.lazy(()=>import('./Components/Questions'));
  const Login=React.lazy(()=>import('./Components/Login'));
  const Register=React.lazy(()=>import('./Components/Register'));
+ const CreateQuestion=React.lazy(()=>import('./Components/CreateQuestion'));
 const Routing=()=>{
     return (
     <Routes>
@@ -25,7 +26,9 @@ const Routing=()=>{
         <Route  path='/profile' element={<Profile />}/>
         <Route  path='/chats' element={<Chats />}/>
         <Route  path='/chat' element={<Chat />}/>
+        <Route path="/new" element={<RequireAuth> <CreateQuestion/> </RequireAuth>}/>
         <Route path="/register" element={<Register/>}/>
+        
     </Routes>)
 }
 
