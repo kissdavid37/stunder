@@ -37,11 +37,7 @@ function Header({backButton}) {
                 </IconButton>
             </Link>
             <div>
-            {/* <Link to='/create'>
-                <IconButton>
-                    <AddCircleIcon className='header__icon' fontSize='large' htmlColor='white'/>
-                </IconButton>
-            </Link> */}
+                
             <IconButton onClick={handleLogout}>
             <InfoIcon  className='header__icon' fontSize='large' htmlColor='white'/>
             </IconButton>

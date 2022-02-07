@@ -1,33 +1,33 @@
 import React,{useEffect, useState} from 'react'
-import Switch from '@material-ui/core/Switch';
-import useRightClickMenu from '../hooks/useRightClickMenu';
-import Menu from './Menu';
 import './Questions.css'
 import instance from '../axios';
 import SwipeButtons from './SwipeButtons'
 import useAuth from "../Contexts/authContext";
+import AddIcon from '@material-ui/icons/Add';
+import IconButton from '@material-ui/core/IconButton';
+
 
 
 
 const Questions = () => {
   //const {x,y,showMenu}=useRightClickMenu();
-    const [questions,setQuestions]=useState([]);
+    const [subjects,setSubjects]=useState([]);
    // const { token } = useAuth();
    const token=localStorage.getItem('token');
-    const getQuestion = async () => {
+    const getSubject = async () => {
   try {
 
     const response = await instance.get("/question", {
       headers: { 'x-access-token': `${token}` }
     });
-    setQuestions(response.data.questions);
+    setSubjects(response.data.subjects);
   } catch (error) {
     console.log(error);
   }
 };
 
    
-    useEffect(()=>{getQuestion()},[])
+    useEffect(()=>{getSubject()},[])
 
    
     return (
@@ -37,13 +37,16 @@ const Questions = () => {
                 <p className='questions__need'>Segít</p>
             </div>
             <div className="question__container">
-                {questions.map(question=>{
+                {subjects.map(subject=>{
                     return(
-                    <div key={question.id} className='question__state'>
-                      {/* <Menu x={x} y={y} showMenu={showMenu} /> */}
-                        <Switch  checked={question.ask}  color='primary'/>
-                        <p className='Question'>{question.text}</p>
-                        <Switch checked={question.help}  color='secondary'/>
+                    <div key={subject.id} className='question__state'>
+                        <IconButton  className='add_to_asker'>
+                              <AddIcon fontSize='small'/>
+                        </IconButton>
+                        <p className='Question'>{subject.text}</p>
+                        <IconButton  className='add_to_asker'>
+                              <AddIcon fontSize='small'/>
+                        </IconButton>
                     </div>)
 })}
             </div>

@@ -24,12 +24,7 @@ const SwipeButtons = () => {
             <IconButton className='swipeButtons__star'>
                 <RemoveIcon fontSize='large'/>
             </IconButton>
-            <IconButton className='swipeButtons__right'>
-                <FavoriteIcon fontSize='large'/>
-            </IconButton>
-            <IconButton className='swipeButtons__lightning'>    
-                <FlashOnIcon fontSize='large'/>
-            </IconButton>
+            
         </div>
     )
 }

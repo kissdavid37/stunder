@@ -16,7 +16,7 @@
   display: flex;
 }
 
-form {
+.loginForm {
   background-color: rgba(209, 211, 233, 0.2);
   display: inline;
   width: 25vw;
@@ -37,7 +37,7 @@ form {
   flex-direction: column;
   align-items: center;
 }
-h1 {
+.log {
   font-family: "Brush Script MT", cursieve;
   margin-bottom: 7vh;
   letter-spacing: 5px;
@@ -45,7 +45,7 @@ h1 {
 .inputs {
   font-weight: bold;
 }
-.inputs > input {
+.inputs > .userinputs {
   border: none;
   background: none;
   font-weight: bold;

@@ -1,21 +1,24 @@
 import React from 'react';
 import {useEffect,useState} from 'react';
 import instance from '../axios';
+import "./CreateQuestion.css";
+import Header from './Header';
+import DoneIcon from '@material-ui/icons/Done';
+import IconButton from '@material-ui/core/IconButton';
 
 
 
 const CreateQuestion = () => {
-    const[question,setQuestion]=useState("");
-    const token=localStorage.getItem('token');
-    const AddQuestionAction=async(question)=>{
+    const[text,setText]=useState('');
+   // const token=localStorage.getItem('token');
+    const AddQuestionAction=async(text)=>{
         try{
            const response=await instance.post("/question",{
-            headers: { 'x-access-token': `${token}`,
-            text:question
-         }
-            
+            text:text},
+            {headers: { 'x-access-token': `${window.localStorage.getItem('token')}`}
+              
            });
-           setQuestion(response.data.question);
+           setText(response.data.text);
         }catch(error){
             alert(`Valami hiba történt!Próbáld újra`);
             console.log(error);
@@ -25,17 +28,37 @@ const CreateQuestion = () => {
 
 
 const AddQuestion=async()=>{
-    AddQuestionAction(question);
+    AddQuestionAction(text);
 
 }
 
-  return <div className='background_container'>
-      <h2 className='add'>Tantárgy hozzáadása</h2>
-      <div className='input__container'>
-          <input className='add__Question' type='text' value={''|question} onChange={(e)=>setQuestion(e.target.value)}/>
-      </div>
-      <button onClick={AddQuestion}>Hozzáad</button>
-  </div>;
+  return (
+        <div className='page_container'>
+                <Header />
+                <div className='form_container'>
+                    <div className='question_form'>
+                        <header className='text_container'>
+                            <h2 className='h2_add'>Tantárgy hozzáadása</h2>
+                            <p className='words'>Add hozzá a tárgyat amiből segítséget szeretnél kérni!</p>
+                        </header>
+                        <div className='add_questionForm'>
+                            <div className='input_section'>
+                                <input className='question_input' type='text' value={text||''} placeholder='Tantárgy neve' autoComplete='off' onChange={(e)=>setText(e.target.value)}/>
+                                    <button className='animated_button' onClick={AddQuestion}><DoneIcon/></button>
+
+                            </div>
+                            
+                            
+                        </div>
+                        <div className='shadow1'></div>
+                        <div className='shadow2'></div>
+                        
+                    </div>
+
+                    
+                    
+                </div>
+        </div>)
 };
 
 export default CreateQuestion;
