@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import { Link,useHistory, useNavigate } from "react-router-dom";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 const handleLogout=()=>{
@@ -32,14 +32,14 @@ function Header({backButton}) {
             
             
             <Link to='/question'>
-                <IconButton>
+                
                 <h2 className='appName'>Stunder</h2>
-                </IconButton>
+                
             </Link>
             <div>
                 
             <IconButton onClick={handleLogout}>
-            <InfoIcon  className='header__icon' fontSize='large' htmlColor='white'/>
+            <ExitToAppIcon  className='header__icon' fontSize='large' htmlColor='white'/>
             </IconButton>
             <Link to="/chats">
                 <IconButton>

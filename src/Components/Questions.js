@@ -29,6 +29,7 @@ const Questions = () => {
    
     useEffect(()=>{getSubject()},[])
 
+
    
     return (
         <div className='questions__div'>

@@ -3,8 +3,6 @@ import "./SwipeButtons.css";
 import ReplayIcon from '@material-ui/icons/Replay';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FlashOnIcon from '@material-ui/icons/FlashOn';
 import IconButton from '@material-ui/core/IconButton';
 import {useNavigate} from 'react-router-dom';
 
