@@ -53,3 +53,8 @@
 .question__state:nth-child(even) {
   background-color: #d9f3ff;
 }
+
+.add_to_asker {
+  background-color: white;
+  color: rgb(241, 31, 66) !important;
+}

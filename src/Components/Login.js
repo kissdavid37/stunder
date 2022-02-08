@@ -63,16 +63,16 @@ const register=()=>{
     return (
         <div className='login__outercontainer'>
             <div className="login__container">
-               <form >
+               <form className='loginForm' >
                     <div className="userDetails">
                         <h1 className="log">Stunder</h1>
                         <div className="inputs">
                             <span className="details">Felhasználónév</span>
-                            <input type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setEmail(e.target.value)}/>
+                            <input className='userinputs' type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setEmail(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">Jelszó</span>
-                            <input type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                            <input className='userinputs' type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
                         <p onClick={register}>Nincs fiókod? kattints ide.</p>
                     </div>

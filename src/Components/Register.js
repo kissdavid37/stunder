@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import Avatar from 'react-avatar';
-import './Register.css'
+import './Login.css'
 import axios from 'axios';
 import instance from '../axios';
 import {useNavigate} from 'react-router-dom';
@@ -52,28 +52,28 @@ const Register = () => {
         
         <div className='login__outercontainer'>
             <div className="login__container">
-               <form >
+               <form className='loginForm '>
                     <div className="userDetails">
                         <h1 className="log">Stunder</h1>
                         <div className="inputs">
                             <span className="details">Felhasználónév</span>
-                            <input type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setUsername(e.target.value)}/>
+                            <input className='userinputs' type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setUsername(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">E-Mail</span>
-                            <input type="email" placeholder='E-mail' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                            <input className='userinputs' type="email" placeholder='E-mail' value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">Jelszó</span>
-                            <input type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                            <input className='userinputs' type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">Nem</span>
-                            <input type="text" placeholder='Nem' value={gender} onChange={(e)=>setGender(e.target.value)}/>
+                            <input className='userinputs' type="text" placeholder='Nem' value={gender} onChange={(e)=>setGender(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">Rövid leírás</span>
-                            <input type="text" placeholder='Rövid leírás' value={description} onChange={(e)=>setDescription(e.target.value)}/>
+                            <input className='userinputs' type="text" placeholder='Rövid leírás' value={description} onChange={(e)=>setDescription(e.target.value)}/>
                         </div>
                         <p onClick={()=>history('/',{replace:true})}>Már van fiókom.</p>
                     </div>
