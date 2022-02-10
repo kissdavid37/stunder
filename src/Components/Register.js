@@ -7,7 +7,7 @@ import instance from '../axios';
 import {useNavigate} from 'react-router-dom';
 import { AxiosResponse,AxiosError } from 'axios';
 
-const registerAction=async (name,email,pass,descript,gender)=>{
+const registerAction=async (name,email,pass,gender,descript)=>{
     try{
         const register=await instance.post('/register',{
             name:name,
@@ -16,12 +16,20 @@ const registerAction=async (name,email,pass,descript,gender)=>{
             gender:gender,
             description:descript
         });
+        const regtochat=await axios.post('https://api.chatengine.io/users',{
+            username:name,
+            secret:pass,
+             email:email},
+            {headers:{'PRIVATE-KEY':`${process.env.REACT_APP_PRIVATE_KEY}`}
+        })
         alert(`Sikeresen regisztráció a következő felhasználónévvel:${name}.\n Kérlek jelentkezz be!`);
         console.log(register);
+        console.log(regtochat)
         return register.data.register
     }catch(error){
         alert(`Valami hiba történt!Próbáld újra`);
         console.log(error);
+        
     }
 };
 
