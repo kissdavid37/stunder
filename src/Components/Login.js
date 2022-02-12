@@ -12,7 +12,7 @@ const Login = () => {
 
      const history=useNavigate();
 
-const[username,setEmail]=useState("");
+const[username,setUsername]=useState("");
 const [password,setPassword]=useState("");
 
 
@@ -48,6 +48,8 @@ const authorize=async()=>{
   }
   else{
   window.localStorage.setItem('token',token);
+  window.localStorage.setItem('username',username)
+  window.localStorage.setItem('password',password)
   history('/question',{replace:true})
   }
   
@@ -68,7 +70,7 @@ const register=()=>{
                         <h1 className="log">Stunder</h1>
                         <div className="inputs">
                             <span className="details">Felhasználónév</span>
-                            <input className='userinputs' type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setEmail(e.target.value)}/>
+                            <input className='userinputs' type="text" placeholder='Felhasználónév' value={username} onChange={(e)=>setUsername(e.target.value)}/>
                         </div>
                         <div className="inputs">
                             <span className="details">Jelszó</span>
@@ -87,5 +89,6 @@ const register=()=>{
         </div>
     )
 }
+
 
 export default Login

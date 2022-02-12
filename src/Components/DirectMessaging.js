@@ -9,7 +9,7 @@ const DirectMessaging = () => {
     function implementingDirectChat(credentials){
         getOrCreateChat(
             credentials,
-            {is_direct_chat:true,usernames:[username]},
+            {is_direct_chat:false,usernames:[username]},
             ()=>setUsername('')
         )
     }
@@ -28,6 +28,7 @@ const DirectMessaging = () => {
                 <button onClick={() => implementingDirectChat(credentials)}>
                     Create Chat
                 </button>
+                
 
             </div>
         )
@@ -36,9 +37,10 @@ const DirectMessaging = () => {
 
     <ChatEngine
             height='100vh'
-            userName='kissdavid37'
+            userName={window.localStorage.getItem('username')}
             
-            userSecret={process.env.REACT_APP_USER_SECRET}
+           // userSecret={process.env.REACT_APP_USER_SECRET}
+           userSecret={window.localStorage.getItem('password')}
             projectID={process.env.REACT_APP_PROJECT_ID}
             displayNewChatInterface={(credentials) => displayChatInterface(credentials)}
             />
