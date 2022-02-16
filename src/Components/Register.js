@@ -83,7 +83,7 @@ const Register = () => {
                             <span className="details">Rövid leírás</span>
                             <input className='userinputs' type="text" placeholder='Rövid leírás' value={description} onChange={(e)=>setDescription(e.target.value)}/>
                         </div>
-                        <p onClick={()=>history('/',{replace:true})}>Már van fiókom.</p>
+                        <p className='link' onClick={()=>history('/',{replace:true})}>Már van fiókom.</p>
                     </div>
                     <div className="button">
                         {/* <Link className="button" to="/question" > */}

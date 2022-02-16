@@ -22,7 +22,9 @@
     "react-scripts": "5.0.0",
     "react-tinder-card": "^1.4.5",
     "react-token-auth": "^2.3.8",
+    "sass": "^1.49.7",
     "socket.io-client": "^3.0.0",
+    "start": "^5.1.0",
     "uuid": "8.3.2",
     "web-vitals": "^2.1.4"
   },

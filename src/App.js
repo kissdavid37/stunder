@@ -3,8 +3,6 @@ import './App.css';
 import Header from './Components/Header';
 import Routing from './Router';
 import  useAuth  from './Contexts/authContext'
-import Menu from './Components/Menu'
-import useRightClickMenu from './hooks/useRightClickMenu';
 function App() {
 
     const {authed} = useAuth()

@@ -52,8 +52,13 @@ const Questions = () => {
                         </IconButton>
                     </div>)
 })}
+      <SwipeButtons/>
+    
             </div>
-            <SwipeButtons/>
+            
+           
+            
+            
         </div>
 
     )

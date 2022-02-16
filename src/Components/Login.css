@@ -1,5 +1,5 @@
 .login__outercontainer {
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg, #11d1ea, #7869dc);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -68,7 +68,7 @@ input:focus {
   padding: 2vh 5vw;
   text-align: center;
   vertical-align: middle;
-  background-color: #c018dd;
+  background-image: linear-gradient(to right, #7869dc 0%, #11d1ea 100%);
   border-radius: 15px;
   cursor: pointer;
   box-shadow: 0 10px black;
@@ -85,6 +85,26 @@ input:focus {
   transform: translateY(5px);
 }
 
-p:hover {
+.link:hover {
   cursor: pointer;
+}
+form .userDetails .inputs {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .userDetails .inputs input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+form .userDetails .inputs input .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
 }

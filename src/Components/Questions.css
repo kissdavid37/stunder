@@ -25,12 +25,19 @@
 }
 
 .questions__div {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
   height: fit-content;
-  min-height: calc(100vh - 77px);
+  min-height: calc(100vh);
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  z-index: -1;
 }
 
 .questions__offer {
+  margin-top: 10vh;
   display: flex;
   justify-content: space-between;
   margin-left: 30px;

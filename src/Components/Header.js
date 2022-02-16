@@ -3,7 +3,6 @@ import PersonIcon from '@material-ui/icons/Person';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import "./Header.css";
 import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
 import { Link,useHistory, useNavigate } from "react-router-dom";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -31,7 +30,7 @@ function Header({backButton}) {
             )}
             
             
-            <Link to='/question'>
+            <Link className='appName' to='/question'>
                 
                 <h2 className='appName'>Stunder</h2>
                 

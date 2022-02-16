@@ -1,0 +1,67 @@
+.ce-primary-button {
+  visibility: hidden;
+}
+
+#ce-add-username-input {
+  visibility: hidden;
+}
+
+.ce-chat-card {
+  background-color: rgb(173, 101, 233, 0.5) !important;
+}
+
+.ce-active-chat-card {
+  background-color: #9d79cc !important;
+  border-radius: 0px !important;
+}
+.ce-chats-container {
+  background-color: #cabcdc !important;
+  border-radius: 0px !important;
+}
+.ce-chat-form-container {
+  background-color: #cabcdc !important;
+}
+.ce-settings {
+  background-color: #cabcdc !important;
+  border-left: 3px solid #9d79cc !important;
+}
+.ce-settings > div > div > div > div > div {
+  background-color: #cabcdc !important;
+}
+.ce-input {
+  background-color: #cabcdc !important;
+}
+.ce-chat-feed-container {
+  background-color: #cabcdc !important;
+}
+.ce-chat-title {
+  background-color: #cabcdc !important;
+  border-bottom: 3px solid #9d79cc !important;
+}
+.ce-quill-container {
+  background-color: #cabcdc !important;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cabcdc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.ce-chat-feed-column {
+  background-color: #cabcdc;
+}
+
+.ce-my-message-bubble {
+  background-image: linear-gradient(to right, #7869dc 0%, #11d1ea 100%);
+}

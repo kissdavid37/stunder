@@ -25,23 +25,40 @@ const Profile = () => {
     return (
         
         <div className='profile__container'>
+                <div class="card">
 
-            <div className="profile__outerContainer">
+                    <div class="card__side">
+                        <div class="card__cover">
+                            <h2 class="card__heading">
+                            <span class="card__heading-span">Profilom</span>
+                            </h2>
+                        </div>
+                        <div class="card__details">
+                            <ul className='data'>
+                                <li>Felhasználónév:</li>
+                                <li>Rövid leírás:</li>
+                                <li>Szak:</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            
+            {/* <div className="profile__outerContainer">
                 <Avatar className='avatar' size='300'/>
                 <form>
                     <div className="userDetails">
                         <div className="inputs">
                             <span className="details">Felhasználónév</span>
-                            <input type="text" placeholder='Felhasználónév'/>
+                            <p className='user-detail'> Ide jön majd a felhasználónév</p>
                         </div>
-                        <div className="inputs">
-                            <span className="details">Jelszó</span>
-                            <input type="text" placeholder='Jelszó'/>
-                        </div>
-                        <div className="inputs">
-                            <span className="details">Jelszó megerősítés</span>
-                            <input type="text" placeholder='Jelszó megerősítés'/>
-                        </div>
+                        
+                            <span className="details">Rövid leírás</span>
+                            <p className='user-detail'> Ide jön majd a leírásssssssssssssss</p>
+                        
+                       
                         <div className="inputs">
                             <span className="details">Szak</span>
                             <select name="faculty" id="faculty">
@@ -55,7 +72,7 @@ const Profile = () => {
                     <input type="submit" value='Mentés' />
                 </div>
                 </form>
-            </div>
+            </div> */}
             
         </div>
     )

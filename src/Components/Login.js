@@ -76,7 +76,7 @@ const register=()=>{
                             <span className="details">Jelszó</span>
                             <input className='userinputs' type="password" placeholder='Jelszó' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
-                        <p onClick={register}>Nincs fiókod? kattints ide.</p>
+                        <p className='link' onClick={register}>Nincs fiókod? kattints ide.</p>
                     </div>
                     
                     <div className="button">

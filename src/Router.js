@@ -2,7 +2,6 @@ import * as React from 'react';
 import {Route,Routes,Navigate} from 'react-router-dom';
 import Profile from './Components/Profile';
 import Chats from './Components/Chats';
-import Chat from './Components/Chat';
 import useAuth from './Contexts/authContext'
 
 function RequireAuth({ children }) {
@@ -25,7 +24,6 @@ const Routing=()=>{
         <Route path='/question' element={<RequireAuth><Questions /></RequireAuth>} />
         <Route  path='/profile' element={<Profile />}/>
         <Route  path='/chats' element={<Chats />}/>
-        <Route  path='/chat' element={<Chat />}/>
         <Route path="/new" element={<RequireAuth> <CreateQuestion/> </RequireAuth>}/>
         <Route path="/register" element={<Register/>}/>
         
