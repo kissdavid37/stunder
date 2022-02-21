@@ -14,8 +14,8 @@
 
 .card {
   position: absolute;
-  top: 30%;
-  bottom: 25%;
+  top: 20%;
+  bottom: 10%;
   left: 30%;
   right: 30%;
   text-align: center;
@@ -33,10 +33,10 @@
 }
 
 .data {
-  position: absolute;
-  top: 8vh;
-  right: 0%;
-  left: 0%;
+  position: fixed;
+  top: 30%;
+  right: 32%;
+  left: 32%;
   bottom: 20%;
   list-style-type: none;
   background-color: ghostwhite;
@@ -44,11 +44,11 @@
 }
 
 .data > li {
-  margin-top: 2vh;
+  margin-top: 4vh;
   padding: 0.5em;
   border-bottom: 2px solid #eeeeee;
   font-family: "Brush Script MT", cursieve;
-  font-size: 15pt;
+  font-size: 20pt;
 }
 .card__heading-span {
   display: inline;
@@ -58,25 +58,4 @@
   font-family: "Brush Script MT", cursieve;
   letter-spacing: 4pt;
   font-size: 30pt;
-}
-
-form .userDetails .inputs {
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
-}
-
-form .userDetails .inputs input {
-  height: 45px;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding-left: 15px;
-  font-size: 16px;
-}
-
-form .userDetails .inputs input .details {
-  font-weight: 500;
-  margin-bottom: 5px;
-  display: block;
 }

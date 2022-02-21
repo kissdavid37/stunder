@@ -19,11 +19,11 @@ function RequireAuth({ children }) {
 const Routing=()=>{
     return (
     <Routes>
-        <Route path='/' element={<RequireAuth><Questions /></RequireAuth>} />
+        <Route path='/' element={<Login />} />
         <Route path='/login' element={<Login />} />
         <Route path='/question' element={<RequireAuth><Questions /></RequireAuth>} />
-        <Route  path='/profile' element={<Profile />}/>
-        <Route  path='/chats' element={<Chats />}/>
+        <Route  path='/profile' element={<RequireAuth><Profile /></RequireAuth>}/>
+        <Route  path='/chats' element={<RequireAuth><Chats /></RequireAuth>}/>
         <Route path="/new" element={<RequireAuth> <CreateQuestion/> </RequireAuth>}/>
         <Route path="/register" element={<Register/>}/>
         

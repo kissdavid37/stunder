@@ -1,43 +1,43 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
-import Avatar from 'react-avatar';
+import instance from '../axios';
 import './Profile.css'
 
 const Profile = () => {
-    const [faculty,setFaculty]=useState([
-       {
-           name:'Programtervező informatika'
-       },
-       {
-        name:'Mérnökinformatika'
-       },
-       {
-        name:'Gazdaságinformatika'
+  
+   const[credentials,setCredentials]=useState([]);
+   const token=localStorage.getItem('token');
+   const getCredentials=async()=>{
+       try{
+        const response=await instance.get("/profile",{
+            headers:{'x-access-token':`${token}`}
+        })
+       setCredentials(response.data.user)
+       }catch(error){
+           console.log(error);
        }
-    ]);
+       
+   };
+   useEffect(()=>{getCredentials()},[])
 
-    const [profilepic,SetProfilepPic]=useState([
-        {
-            img:'http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3'
-        }
-    ]);
     
     return (
         
         <div className='profile__container'>
-                <div class="card">
+                <div className="card">
 
-                    <div class="card__side">
-                        <div class="card__cover">
-                            <h2 class="card__heading">
-                            <span class="card__heading-span">Profilom</span>
+                    <div className="card__side">
+                        <div className="card__cover">
+                            <h2 className="card__heading">
+                            <span className="card__heading-span">Profilom</span>
                             </h2>
                         </div>
-                        <div class="card__details">
+                        <div className="card__details">
                             <ul className='data'>
-                                <li>Felhasználónév:</li>
-                                <li>Rövid leírás:</li>
-                                <li>Szak:</li>
+                                <li>Felhasználónév:{credentials.name}</li>
+                                <li>Email:{credentials.email}</li>
+                                <li>Rövid leírás:{credentials.description}</li>
+                                <li>Nem:{credentials.gender}</li>
                             </ul>
                         </div>
                     </div>
