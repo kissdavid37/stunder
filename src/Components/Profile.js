@@ -1,47 +1,64 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
-import Avatar from 'react-avatar';
+import instance from '../axios';
 import './Profile.css'
 
 const Profile = () => {
-    const [faculty,setFaculty]=useState([
-       {
-           name:'Programtervező informatika'
-       },
-       {
-        name:'Mérnökinformatika'
-       },
-       {
-        name:'Gazdaságinformatika'
+  
+   const[credentials,setCredentials]=useState([]);
+   const token=localStorage.getItem('token');
+   const getCredentials=async()=>{
+       try{
+        const response=await instance.get("/profile",{
+            headers:{'x-access-token':`${token}`}
+        })
+       setCredentials(response.data.user)
+       }catch(error){
+           console.log(error);
        }
-    ]);
+       
+   };
+   useEffect(()=>{getCredentials()},[])
 
-    const [profilepic,SetProfilepPic]=useState([
-        {
-            img:'http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3'
-        }
-    ]);
     
     return (
         
         <div className='profile__container'>
+                <div className="card">
 
-            <div className="profile__outerContainer">
+                    <div className="card__side">
+                        <div className="card__cover">
+                            <h2 className="card__heading">
+                            <span className="card__heading-span">Profilom</span>
+                            </h2>
+                        </div>
+                        <div className="card__details">
+                            <ul className='data'>
+                                <li>Felhasználónév:{credentials.name}</li>
+                                <li>Email:{credentials.email}</li>
+                                <li>Rövid leírás:{credentials.description}</li>
+                                <li>Nem:{credentials.gender}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            
+            {/* <div className="profile__outerContainer">
                 <Avatar className='avatar' size='300'/>
                 <form>
                     <div className="userDetails">
                         <div className="inputs">
                             <span className="details">Felhasználónév</span>
-                            <input type="text" placeholder='Felhasználónév'/>
+                            <p className='user-detail'> Ide jön majd a felhasználónév</p>
                         </div>
-                        <div className="inputs">
-                            <span className="details">Jelszó</span>
-                            <input type="text" placeholder='Jelszó'/>
-                        </div>
-                        <div className="inputs">
-                            <span className="details">Jelszó megerősítés</span>
-                            <input type="text" placeholder='Jelszó megerősítés'/>
-                        </div>
+                        
+                            <span className="details">Rövid leírás</span>
+                            <p className='user-detail'> Ide jön majd a leírásssssssssssssss</p>
+                        
+                       
                         <div className="inputs">
                             <span className="details">Szak</span>
                             <select name="faculty" id="faculty">
@@ -55,7 +72,7 @@ const Profile = () => {
                     <input type="submit" value='Mentés' />
                 </div>
                 </form>
-            </div>
+            </div> */}
             
         </div>
     )

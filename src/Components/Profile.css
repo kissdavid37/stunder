@@ -1,64 +1,61 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-@media screen {
-  .profile__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: calc(100vh - 97px);
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-}
-
-.profile__outerContainer {
-  max-width: 700px;
-  width: 100%;
-  background-color: rgb(46, 43, 43, 0.5);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 10px 15px 10px rgb(75, 74, 74);
-  display: flex;
+.profile__container {
   position: fixed;
-  top: 15vh;
-}
-
-.profile__outerContainer .title {
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-
-.profile__outerContainer form .userDetails {
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  z-index: -1;
 }
 
-form .userDetails .inputs {
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
+.card {
+  position: absolute;
+  top: 20%;
+  bottom: 10%;
+  left: 30%;
+  right: 30%;
+  text-align: center;
+}
+.card__side {
+  position: absolute;
+  top: 2vh;
+  bottom: 2vh;
+  left: 2vw;
+  right: 2vw;
+  background-image: url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 30px #fff;
 }
 
-form .userDetails .inputs input {
-  height: 45px;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding-left: 15px;
-  font-size: 16px;
+.data {
+  position: fixed;
+  top: 30%;
+  right: 32%;
+  left: 32%;
+  bottom: 20%;
+  list-style-type: none;
+  background-color: ghostwhite;
+  padding: 0 3vw 3vw;
 }
 
-form .userDetails .inputs input .details {
-  font-weight: 500;
-  margin-bottom: 5px;
-  display: block;
+.data > li {
+  margin-top: 4vh;
+  padding: 0.5em;
+  border-bottom: 2px solid #eeeeee;
+  font-family: "Brush Script MT", cursieve;
+  font-size: 20pt;
 }
-
-.avatar {
-  margin-right: 10px;
+.card__heading-span {
+  display: inline;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Brush Script MT", cursieve;
+  letter-spacing: 4pt;
+  font-size: 30pt;
 }
