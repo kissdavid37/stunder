@@ -1,0 +1,26 @@
+.question__state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 5px 10px 10px black;
+  transition: 1.5s;
+  align-items: center;
+}
+
+.question__state:nth-child(odd) {
+  background-color: #b2e6ff;
+}
+.question__state:nth-child(even) {
+  background-color: #d9f3ff;
+}
+
+.add_to_asker {
+  background-color: white;
+  color: rgb(241, 31, 66) !important;
+}
