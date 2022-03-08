@@ -2,12 +2,10 @@ import axios from "axios";
 
 const instance = axios.create({
   baseURL: "http://127.0.0.1:5000",
-  responseType:'json',
+  responseType: "json",
   timeout: 5000,
-  headers: { "Content-Type": "application/json" }
+  headers: { "Content-Type": "application/json" },
 });
-
-
 
 // const getQuestion = async (token) => {
 //   try {
@@ -20,4 +18,4 @@ const instance = axios.create({
 //   }
 // };
 
-export default instance
+export default instance;

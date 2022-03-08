@@ -38,15 +38,3 @@
   color: rgb(177, 171, 171);
   font-family: cursive;
 }
-
-.question__state:nth-child(odd) {
-  background-color: #b2e6ff;
-}
-.question__state:nth-child(even) {
-  background-color: #d9f3ff;
-}
-
-.add_to_asker {
-  background-color: white;
-  color: rgb(241, 31, 66) !important;
-}

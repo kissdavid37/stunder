@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "html.format.endWithNewline": true,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.maxPreserveNewLines": 3,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}
